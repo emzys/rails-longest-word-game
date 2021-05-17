@@ -7,11 +7,12 @@
 </div>
 
 
-<form action="/score" method="POST" class="user-guess">
+<form action="/score" method="POST">
   <label for="basic-url">What's the longest word you can find?</label>
   <div class="input-group mb-3">
-    <input type="text" name="answer" value="<% params[:answer] %>" placeholder="Your guess..." class="form-control" aria-describedby="button-addon2">
+    <input type="text" name="answer" value="<% params[:answer] %>" placeholder="Your guess..." class="form-control user-input" aria-describedby="button-addon2">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
     <div class="input-group-append">
       <input class="btn btn-outline-secondary" type="submit" id="button-addon2">
     </div>

@@ -1,0 +1,13 @@
+<h1>Result</h1>
+
+<% if @in_grid %>
+  <% if @english_word %>
+    <p>Congratulations! <strong><%= @answer %></strong> is a valid English word!</p>
+  <% else %>
+    <p>Sorry, <strong><%= @answer %></strong> is not a valid English word.</p>
+  <% end %>
+<% else %>
+  <p>Sorry, <strong><%= @answer %></strong> can't be built out of <%= @letters.join(", ") %></p>
+<% end %>
+
+<%= link_to 'Play again!', :new %>
